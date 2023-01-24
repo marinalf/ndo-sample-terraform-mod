@@ -43,7 +43,7 @@ resource "mso_schema_site" "aws_site" {
   site_id       = data.mso_site.aws_site.id
 }
 
-## Configure template objects
+## Configure template policies via module
 
 module "schema_config" {
   source = "./modules/template_policies"
