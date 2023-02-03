@@ -32,16 +32,16 @@ resource "mso_schema" "schema1" {
 ## Associate schema and template with cloud sites
 
 resource "mso_schema_site" "azure_site" {
-  schema_id     = mso_schema.schema1.id
-  template_name = "distributed-app"
-  site_id       = data.mso_site.azure_site.id
+  schema_id           = mso_schema.schema1.id
+  template_name       = "distributed-app"
+  site_id             = data.mso_site.azure_site.id
   undeploy_on_destroy = true
 }
 
 resource "mso_schema_site" "aws_site" {
-  schema_id     = mso_schema.schema1.id
-  template_name = "distributed-app"
-  site_id       = data.mso_site.aws_site.id
+  schema_id           = mso_schema.schema1.id
+  template_name       = "distributed-app"
+  site_id             = data.mso_site.aws_site.id
   undeploy_on_destroy = true
 }
 
@@ -58,7 +58,7 @@ module "schema_config" {
   template_name = "distributed-app"
   cloudsite1_id = data.mso_site.azure_site.id
   cloudsite2_id = data.mso_site.aws_site.id
-}  
+}
 
 
 # Deploy template
