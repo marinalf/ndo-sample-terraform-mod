@@ -58,17 +58,14 @@ module "schema_config" {
   cloudsite2_id = data.mso_site.aws_site.id
 }  
 
-/*
+
 # Deploy template
 
-resource "mso_schema_template_deploy" "azure_deployer" {
+resource "mso_schema_template_deploy_ndo" "cloud_deployer" {
   depends_on = [
     module.schema_config
   ]
 
   schema_id     = mso_schema.schema1.id
   template_name = "distributed-app"
-  cloudsite1_id = data.mso_site.azure_site.id
-  cloudsite2_id = data.mso_site.aws_site.id
 }
-*/ 
